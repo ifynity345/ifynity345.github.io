@@ -1,5 +1,5 @@
 /********************
-  Base page styling
+  Theme variables
 *********************/
 :root {
     --bg-main: #0f1012;
@@ -12,7 +12,8 @@
     --radius-card: 12px;
     --radius-small: 6px;
 
-    --font-main: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-main: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont,
+        Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 * {
@@ -44,7 +45,7 @@ body {
 *********************/
 .site-header {
     background-color: #141519;
-    border-bottom: 1px solid #2a2d33;
+    border-bottom: 1px solid var(--border-card);
 }
 
 .header-flex {
@@ -102,11 +103,16 @@ body {
     border-radius: var(--radius-card);
     padding: 1.5rem 1.5rem 1rem;
     margin-bottom: 1.5rem;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
 }
 
 .hero-card {
-    background: radial-gradient(circle at 10% 10%, rgba(77,168,255,0.08) 0%, rgba(26,28,32,0) 60%), var(--bg-card);
+    background: radial-gradient(
+            circle at 10% 10%,
+            rgba(77, 168, 255, 0.08) 0%,
+            rgba(26, 28, 32, 0) 60%
+        ),
+        var(--bg-card);
 }
 
 /********************
@@ -118,7 +124,7 @@ body {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin: 0 0 .5rem;
+    margin: 0 0 0.5rem;
 }
 
 .headline {
@@ -169,15 +175,56 @@ body {
     background-color: var(--bg-card-alt);
     border: 1px solid var(--border-card);
     border-radius: var(--radius-small);
-    padding: 1rem 1rem .5rem;
+    padding: 1rem 1rem 0.75rem;
     margin-bottom: 1rem;
+
+    /* animation + visual polish */
+    position: relative;
+    transition:
+        box-shadow 0.25s ease,
+        transform 0.25s ease,
+        border 0.25s ease,
+        background-color 0.25s ease;
 }
+
+/* glowing accent bar on hover */
+.job::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: linear-gradient(
+        180deg,
+        rgba(77,168,255,1) 0%,
+        rgba(77,168,255,0) 80%
+    );
+    border-top-left-radius: var(--radius-small);
+    border-bottom-left-radius: var(--radius-small);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+/* hover effect */
+.job:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.6),
+                0 0 20px rgba(77,168,255,0.25);
+    border: 1px solid rgba(77,168,255,0.4);
+    background-color: #2a2d33; /* slightly brighter on hover */
+}
+
+.job:hover::after {
+    opacity: 1;
+}
+
 
 .job-head {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
 }
 
 .job-role {
@@ -198,14 +245,14 @@ body {
 }
 
 .job-points {
-    margin: 0 0 .75rem 1rem;
+    margin: 0 0 0.75rem 1rem;
     padding: 0;
     color: var(--text-main);
     font-size: 0.85rem;
 }
 
 .job-points li {
-    margin-bottom: .4rem;
+    margin-bottom: 0.4rem;
 }
 
 /********************
@@ -213,23 +260,73 @@ body {
 *********************/
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(min(230px,100%),1fr));
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(230px, 100%), 1fr)
+    );
     gap: 1rem;
 }
 
+/********************
+  Rainbow hover animation for skills
+*********************/
+
 .skill-col {
-    background-color: var(--bg-card-alt);
-    border: 1px solid var(--border-card);
-    border-radius: var(--radius-small);
-    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
 }
+
+/* rainbow overlay that slides when hovered */
+.skill-col::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 150%;
+    height: 100%;
+    background: linear-gradient(
+        110deg,
+        rgba(255,0,102,0.15) 0%,
+        rgba(255,154,0,0.15) 15%,
+        rgba(255,255,0,0.15) 30%,
+        rgba(0,255,0,0.15) 45%,
+        rgba(0,255,255,0.15) 60%,
+        rgba(0,102,255,0.15) 75%,
+        rgba(153,0,255,0.15) 90%,
+        rgba(255,0,102,0.15) 100%
+    );
+    filter: blur(8px);
+    opacity: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    transition: opacity 0.2s linear;
+}
+
+.skill-col:hover::after {
+    opacity: 1;
+    animation: rainbow-slide 1.2s ease forwards;
+}
+
+@keyframes rainbow-slide {
+    0% {
+        left: -150%;
+    }
+    50% {
+        left: -20%;
+    }
+    100% {
+        left: 120%;
+    }
+}
+
 
 .skill-col h3 {
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--text-main);
     margin-top: 0;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
 }
 
 .skill-col ul {
@@ -240,7 +337,7 @@ body {
 }
 
 .skill-col ul li {
-    margin-bottom: .4rem;
+    margin-bottom: 0.4rem;
 }
 
 /********************
@@ -248,23 +345,72 @@ body {
 *********************/
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(min(300px,100%),1fr));
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(300px, 100%), 1fr)
+    );
     gap: 1rem;
 }
 
+/********************
+  Interactive ripple bubble on project hover (mouse-position aware)
+*********************/
+
+/* make sure proj-card is positioned and can show overflow visuals */
 .proj-card {
-    background-color: var(--bg-card-alt);
-    border: 1px solid var(--border-card);
-    border-radius: var(--radius-small);
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+
+/* subtle lift/glow on hover */
+.proj-card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 25px 50px rgba(0,0,0,0.5),
+        0 0 20px rgba(77,168,255,0.25);
+}
+
+/* the bubble element we'll inject dynamically */
+.ripple-bubble {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    pointer-events: none;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(77,168,255,0.25) 0%,
+        rgba(77,168,255,0) 70%
+    );
+    mix-blend-mode: screen; /* feels like light under glass */
+    filter: blur(8px);
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.4);
+    animation: ripple-burst 0.9s ease-out forwards;
+}
+
+/* animation for each bubble */
+@keyframes ripple-burst {
+    0% {
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scale(0.4);
+    }
+    70% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.4);
+    }
+}
+
 
 .proj-head {
     display: flex;
     flex-direction: column;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
 }
 
 .proj-name {
@@ -276,7 +422,7 @@ body {
 .proj-stack {
     font-size: 0.75rem;
     color: var(--text-dim);
-    margin-top: .2rem;
+    margin-top: 0.2rem;
 }
 
 .proj-points {
@@ -287,10 +433,9 @@ body {
 }
 
 .proj-points li {
-    margin-bottom: .4rem;
+    margin-bottom: 0.4rem;
 }
 
-/* GitHub row under projects */
 .github-row {
     font-size: 0.8rem;
     margin-top: 1.5rem;
@@ -312,7 +457,7 @@ body {
     background-color: var(--bg-card-alt);
     border: 1px solid var(--border-card);
     border-radius: var(--radius-small);
-    padding: 1rem 1rem .75rem;
+    padding: 1rem 1rem 0.75rem;
     margin-bottom: 1rem;
 }
 
@@ -320,7 +465,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
 }
 
 .edu-program {
@@ -352,7 +497,7 @@ body {
 #contact p {
     font-size: 0.85rem;
     color: var(--text-main);
-    margin: 0 0 .5rem;
+    margin: 0 0 0.5rem;
 }
 
 #contact a {

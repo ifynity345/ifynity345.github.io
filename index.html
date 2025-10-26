@@ -1,320 +1,377 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ifeanyi Bethel Aigbogun | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ifeanyi Bethel Aigbogun | Software Developer</title>
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <!-- Disclaimer Banner -->
-    <div class="disclaimer">
-        This portfolio website was created temporarily for an academic assignment and represents work in progress.
+    <!-- Assignment disclaimer -->
+    <div class="banner">
+        This site was created for an academic assignment and represents work in progress.
     </div>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#resume">Resume</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <!-- Header / nav -->
+    <header class="site-header">
+        <div class="container header-flex">
+            <div class="brand-block">
+                <div class="name">Ifeanyi Bethel Aigbogun</div>
+                <div class="role">Software Developer • Hamilton, ON</div>
+            </div>
 
-    <!-- Hero / Header (Name + Contact Quickline) -->
-    <section id="about">
-        <h1>Ifeanyi Bethel Aigbogun</h1>
-        <p class="subtitle-line">
-            Software Developer &nbsp;|&nbsp; Hamilton, ON &nbsp;|&nbsp; 
-            <a class="accent" href="mailto:aigbogunbethel@gmail.com">aigbogunbethel@gmail.com</a> &nbsp;|&nbsp;
-            <span class="accent">(365) 323-5112</span> &nbsp;|&nbsp;
-            <a class="accent" href="https://linkedin.com/in/ifeanyi-aigbogun-bethel" target="_blank">
-                linkedin.com/in/ifeanyi-aigbogun-bethel
-            </a>
-        </p>
+            <nav class="main-nav">
+                <a href="#summary">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-        <p>
-            Mohawk College software development student (Program Code: 558) with a strong foundation in full stack development 
-            and database design/development. Seeking a co-op placement to apply technical skills, gain hands-on industry 
-            experience, and contribute to real projects.
-        </p>
+    <!-- MAIN CONTENT -->
+    <main class="container">
 
-        <p>
-            I bring both technical ability and support mindset: I’ve handled real users, diagnosed issues under pressure, 
-            maintained systems, and written clear documentation. I care about building things that actually work for people.
-        </p>
-    </section>
+        <!-- SUMMARY / HERO -->
+        <section id="summary" class="card hero-card">
+            <p class="topline">Available for Co-op</p>
+            <h1 class="headline">I build software, support real users, and solve technical problems.</h1>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2>Skills</h2>
+            <p class="summary-text">
+                I’m a software developer based in Hamilton, ON, currently studying Software Development at Mohawk College
+                (Program Code: 558). I have hands-on experience in technical support, desktop support, and database
+                administration. I’ve worked on real systems, helped real users, and kept things running under pressure.
+            </p>
 
-        <div class="skills-container">
+            <p class="summary-text">
+                My focus right now is full stack development using C#, ASP.NET Core MVC, SQL, and JavaScript. I’m looking
+                for a co-op placement where I can contribute to production work, learn from experienced engineers, and
+                keep growing.
+            </p>
 
-            <div class="skill-box">
-                <h3>Software & Tools</h3>
-                <ul>
-                    <li>Kubernetes, Docker</li>
-                    <li>Visual Studio</li>
-                    <li>SQL Server</li>
-                    <li>Jira</li>
-                    <li>Excel</li>
-                    <li>MS Project</li>
-                    <li>Git / GitHub</li>
-                    <li>Windows / Linux</li>
+            <div class="contact-row">
+                <span><strong>Email:</strong> <a href="mailto:aigbogunbethel@gmail.com">aigbogunbethel@gmail.com</a></span>
+                <span><strong>Phone:</strong> (365) 323-5112</span>
+                <span><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/ifeanyi-aigbogun-bethel" target="_blank">/ifeanyi-aigbogun-bethel</a></span>
+                <span><strong>GitHub:</strong> <a href="https://github.com/ifynity345" target="_blank">@ifynity345</a></span>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience" class="card">
+            <h2 class="section-title">Experience</h2>
+
+            <div class="job">
+                <div class="job-head">
+                    <div>
+                        <div class="job-role">Freelance Database Administrator</div>
+                        <div class="job-company">Self-Employed • Hamilton, ON</div>
+                    </div>
+                    <div class="job-dates">Sep 2023 – Present</div>
+                </div>
+                <ul class="job-points">
+                    <li>Monitored and maintained client databases for availability, performance, and security.</li>
+                    <li>Performed regular backups/restores and created disaster recovery plans to prevent data loss.</li>
+                    <li>Wrote clear performance reports and recommended improvements based on real metrics.</li>
                 </ul>
             </div>
 
-            <div class="skill-box">
-                <h3>Programming Languages</h3>
-                <ul>
-                    <li>C#, Java, SQL, Python, JavaScript</li>
-                    <li>Golang, Rust, Scala</li>
-                    <li>HTML, CSS</li>
+            <div class="job">
+                <div class="job-head">
+                    <div>
+                        <div class="job-role">Desktop Support Technician</div>
+                        <div class="job-company">Airtel • Lagos, Nigeria</div>
+                    </div>
+                    <div class="job-dates">Oct 2021 – Jul 2023</div>
+                </div>
+                <ul class="job-points">
+                    <li>Diagnosed and resolved hardware, software, and network issues for end users.</li>
+                    <li>Kept systems secure by applying patches and maintaining antivirus compliance.</li>
+                    <li>Trained users and explained technical changes in simple, direct language.</li>
                 </ul>
             </div>
 
-            <div class="skill-box">
-                <h3>Databases / Cloud / Integration</h3>
-                <ul>
-                    <li>MySQL, PostgreSQL, SQL Server</li>
-                    <li>Azure, Logic Apps, SSIS</li>
-                    <li>Data backup, recovery, and performance monitoring</li>
+            <div class="job">
+                <div class="job-head">
+                    <div>
+                        <div class="job-role">Data Analyst Assistant / Technical Support (Intern)</div>
+                        <div class="job-company">Effort Trust • Hamilton, ON</div>
+                    </div>
+                    <div class="job-dates">Jun 2025 – Aug 2025</div>
+                </div>
+                <ul class="job-points">
+                    <li>Uploaded floorplans and managed live website content with accuracy and version control.</li>
+                    <li>Worked with structured data and internal tools in a technical support capacity.</li>
+                    <li>Improved internal processes for organizing and sharing large data sets.</li>
                 </ul>
             </div>
+        </section>
 
-            <div class="skill-box">
-                <h3>Professional Strengths</h3>
-                <ul>
-                    <li>Technical support & troubleshooting</li>
-                    <li>Desktop support and endpoint setup</li>
-                    <li>QA testing and reporting</li>
-                    <li>Documentation and communication with non-technical users</li>
-                </ul>
+        <!-- SKILLS -->
+        <section id="skills" class="card">
+            <h2 class="section-title">Technical Skills</h2>
+
+            <div class="skills-grid">
+                <div class="skill-col">
+                    <h3>Languages</h3>
+                    <ul>
+                        <li>C#, Java, SQL, Python</li>
+                        <li>JavaScript (front end)</li>
+                        <li>Golang, Rust, Scala (exposure)</li>
+                        <li>HTML, CSS</li>
+                    </ul>
+                </div>
+
+                <div class="skill-col">
+                    <h3>Tools & Platforms</h3>
+                    <ul>
+                        <li>Docker, Kubernetes</li>
+                        <li>Visual Studio, IntelliJ IDEA</li>
+                        <li>Git / GitHub</li>
+                        <li>Windows, Linux</li>
+                        <li>Jira, Excel, MS Project</li>
+                    </ul>
+                </div>
+
+                <div class="skill-col">
+                    <h3>Data & Cloud</h3>
+                    <ul>
+                        <li>MySQL, PostgreSQL, SQL Server</li>
+                        <li>Azure, Logic Apps, SSIS</li>
+                        <li>Backup, recovery, performance monitoring</li>
+                    </ul>
+                </div>
+
+                <div class="skill-col">
+                    <h3>Strengths</h3>
+                    <ul>
+                        <li>Troubleshooting and root cause analysis</li>
+                        <li>Technical support / desktop support</li>
+                        <li>QA testing and bug reporting</li>
+                        <li>Communicating clearly with non-technical users</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="card">
+            <h2 class="section-title">Selected Projects</h2>
+
+            <div class="projects-grid">
+
+                <div class="proj-card">
+                    <div class="proj-head">
+                        <div class="proj-name">Online Bookstore</div>
+                        <div class="proj-stack">ASP.NET Core MVC · EF Core</div>
+                    </div>
+                    <ul class="proj-points">
+                        <li>Full bookstore web app with browse, search, and cart-style flow.</li>
+                        <li>Includes admin dashboard, authentication, Razor views, and database models.</li>
+                        <li>Goal: simulate a real e-commerce environment. (In progress)</li>
+                    </ul>
+                </div>
+
+                <div class="proj-card">
+                    <div class="proj-head">
+                        <div class="proj-name">Infinite Quotes Feed</div>
+                        <div class="proj-stack">HTML · PHP · JavaScript</div>
+                    </div>
+                    <ul class="proj-points">
+                        <li>Dynamically loads new “quote cards” as you scroll.</li>
+                        <li>Client + server logic to generate endless content.</li>
+                    </ul>
+                </div>
+
+                <div class="proj-card">
+                    <div class="proj-head">
+                        <div class="proj-name">Plant Growth Simulation</div>
+                        <div class="proj-stack">PHP · JavaScript</div>
+                    </div>
+                    <ul class="proj-points">
+                        <li>Simulates a seed growing into a tree step-by-step.</li>
+                        <li>User can control growth shape: taller, wider, etc.</li>
+                    </ul>
+                </div>
+
+                <div class="proj-card">
+                    <div class="proj-head">
+                        <div class="proj-name">Ping Pong Game</div>
+                        <div class="proj-stack">C#</div>
+                    </div>
+                    <ul class="proj-points">
+                        <li>Two-player paddle game with score tracking to 10.</li>
+                        <li>Collision logic and basic game loop.</li>
+                    </ul>
+                </div>
+
+                <div class="proj-card">
+                    <div class="proj-head">
+                        <div class="proj-name">Student Gradebook System</div>
+                        <div class="proj-stack">C# (Console)</div>
+                    </div>
+                    <ul class="proj-points">
+                        <li>Menu-driven console app to track students and marks.</li>
+                        <li>Uses OOP, LINQ, and validation.</li>
+                    </ul>
+                </div>
+
+                <div class="proj-card">
+                    <div class="proj-head">
+                        <div class="proj-name">Service Request Tracker</div>
+                        <div class="proj-stack">C# · Windows Forms</div>
+                    </div>
+                    <ul class="proj-points">
+                        <li>Ticket-style issue logging with priority and resolution notes.</li>
+                        <li>Designed around a real tech support workflow.</li>
+                    </ul>
+                </div>
+
+                <div class="proj-card">
+                    <div class="proj-head">
+                        <div class="proj-name">Salon Pricing Calculator</div>
+                        <div class="proj-stack">C# · WinForms</div>
+                    </div>
+                    <ul class="proj-points">
+                        <li>Select stylist + services to build an itemized total.</li>
+                        <li>Shows events, validation, and UI logic.</li>
+                    </ul>
+                </div>
+
+                <div class="proj-card">
+                    <div class="proj-head">
+                        <div class="proj-name">ParkingPalace</div>
+                        <div class="proj-stack">React (Concept)</div>
+                    </div>
+                    <ul class="proj-points">
+                        <li>Tracks where you parked, how long you’ve been there, and cost estimate.</li>
+                        <li>Focus on component state and mobile use.</li>
+                    </ul>
+                </div>
+
+                <div class="proj-card">
+                    <div class="proj-head">
+                        <div class="proj-name">Algorithm / Logic Scripts</div>
+                        <div class="proj-stack">PHP</div>
+                    </div>
+                    <ul class="proj-points">
+                        <li><strong>Factorization Script:</strong> prints all factors of a number.</li>
+                        <li><strong>Fighting Ants:</strong> simulates “marching ants” battle rules.</li>
+                        <li><strong>Erdős–Woods Sequence Tool:</strong> number theory / prime factor logic.</li>
+                    </ul>
+                </div>
             </div>
 
-        </div>
-    </section>
+            <div class="github-row">
+                <strong>GitHub:</strong>
+                <a href="https://github.com/ifynity345" target="_blank">github.com/ifynity345</a>
+            </div>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Projects</h2>
+        <!-- EDUCATION -->
+        <section id="education" class="card">
+            <h2 class="section-title">Education</h2>
 
-        <div class="project-card">
-            <h3>Online Bookstore (Full Stack)</h3>
-            <p><strong>ASP.NET Core MVC + EF Core</strong></p>
+            <div class="edu-entry">
+                <div class="edu-top">
+                    <div>
+                        <div class="edu-program">
+                            Diploma, Software Development (Program Code: 558)
+                        </div>
+                        <div class="edu-school">
+                            Mohawk College • Hamilton, ON
+                        </div>
+                    </div>
+                    <div class="edu-dates">Sep 2023 – Dec 2025</div>
+                </div>
+                <div class="edu-body">
+                    Coursework: Front End Development, Programming Fundamentals (Python),
+                    Networking Fundamentals, Database Management, Software Testing & QA,
+                    Cybersecurity Essentials, Technical Documentation, Troubleshooting &
+                    Problem Solving, Systems Analysis & Design.
+                </div>
+            </div>
+
+            <div class="edu-entry">
+                <div class="edu-top">
+                    <div>
+                        <div class="edu-program">
+                            IBM Full Stack Software Developer Certificate
+                        </div>
+                        <div class="edu-school">Hamilton, ON</div>
+                    </div>
+                    <div class="edu-dates">Feb 2025 – Dec 2025</div>
+                </div>
+                <div class="edu-body">
+                    Topics: Intro to Software Engineering, Cloud Computing,
+                    HTML/CSS/JavaScript, Front-End Apps with React,
+                    Python for Data Science, AI & Development.
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="card">
+            <h2 class="section-title">Contact</h2>
             <p>
-                A full e-commerce style bookstore web application that allows users to browse, search, and purchase books.
-                Includes admin dashboard, user authentication, and dynamic data handling with Entity Framework Core.
-                Focus: real-world app structure, CRUD, authentication, Razor Pages, data models. (In progress)
+                <strong>Email:</strong>
+                <a href="mailto:aigbogunbethel@gmail.com">aigbogunbethel@gmail.com</a>
             </p>
-        </div>
-
-        <div class="project-card">
-            <h3>Web Page “Infinité Quotes”</h3>
-            <p><strong>HTML, PHP, JavaScript</strong></p>
+            <p><strong>Phone:</strong> (365) 323-5112</p>
+            <p><strong>Location:</strong> Hamilton, Ontario</p>
             <p>
-                A scrolling quotes feed with infinite loading behavior. As you continue to scroll, the page generates and appends
-                new quote cards to create an endless experience. Focus: front-end rendering + dynamic server logic.
+                <strong>LinkedIn:</strong>
+                <a href="https://linkedin.com/in/ifeanyi-aigbogun-bethel" target="_blank">
+                    linkedin.com/in/ifeanyi-aigbogun-bethel
+                </a>
             </p>
-        </div>
-
-        <div class="project-card">
-            <h3>Step-by-Step Plant Growth Simulation</h3>
-            <p><strong>PHP, JavaScript</strong></p>
             <p>
-                A visual simulation of a plant growing from seed to tree. Includes adjustable growth controls (taller, wider, etc.).
-                Focus: state changes over time, data-driven visuals, user interaction.
+                <strong>GitHub:</strong>
+                <a href="https://github.com/ifynity345" target="_blank">
+                    github.com/ifynity345
+                </a>
             </p>
-        </div>
 
-        <div class="project-card">
-            <h3>Ping Pong Game</h3>
-            <p><strong>C#</strong></p>
-            <p>
-                A two-player paddle game. Ball movement, score tracking to 10 points, and win logic.
-                Focus: game loop logic, keyboard input handling, collision behavior.
-            </p>
-        </div>
+            <a class="btn-resume" href="resume.pdf" target="_blank">Download Resume (PDF)</a>
+        </section>
 
-        <div class="project-card">
-            <h3>Student Gradebook System</h3>
-            <p><strong>C# (Console)</strong></p>
-            <p>
-                A console-based grade manager that tracks students and academic performance. Demonstrates 
-                object-oriented programming, LINQ, menu navigation, and basic data validation.
-            </p>
-        </div>
+        <!-- FOOTER -->
+        <footer class="footer">
+            © 2025 Ifeanyi Bethel Aigbogun
+        </footer>
+    </main>
+    <script>
+    // Ripple effect for project cards based on mouse position
+    document.querySelectorAll('.proj-card').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            // Get bounding box of this card so we know mouse position relative inside it
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
 
-        <div class="project-card">
-            <h3>Media Shop Menu</h3>
-            <p><strong>C#</strong></p>
-            <p>
-                A menu-driven catalog of books, movies, songs, and other media. Lets a user browse and select titles.
-                Focus: clean menu logic, simple data structures, user-driven navigation.
-            </p>
-        </div>
+            // Create the bubble
+            const bubble = document.createElement('span');
+            bubble.classList.add('ripple-bubble');
 
-        <div class="project-card">
-            <h3>Factorization Script</h3>
-            <p><strong>PHP</strong></p>
-            <p>
-                Takes a positive integer input and outputs its factors as an ordered list.
-                Focus: loops, divisibility logic, clean output formatting.
-            </p>
-        </div>
+            // Position it at cursor
+            bubble.style.left = x + 'px';
+            bubble.style.top = y + 'px';
 
-        <div class="project-card">
-            <h3>Fighting Ants Script</h3>
-            <p><strong>PHP</strong></p>
-            <p>
-                Processes “marching ants” battle data and calculates winners based on defined rule sets.
-                Focus: conditional logic and rule-driven outcomes.
-            </p>
-        </div>
+            // Add to card
+            card.appendChild(bubble);
 
-        <div class="project-card">
-            <h3>Erdős–Woods Sequence Tool</h3>
-            <p><strong>PHP</strong></p>
-            <p>
-                Generates numbers in a range based on divisibility rules related to prime factors of the endpoints.
-                Focus: number theory logic and algorithm design.
-            </p>
-        </div>
-
-        <div class="project-card">
-            <h3>ParkingPalace</h3>
-            <p><strong>React Concept App</strong></p>
-            <p>
-                Parking management idea: track where you parked, how long you’ve been there, and estimate cost.
-                Focus: component-based UI, state handling, planning for mobile users.
-            </p>
-        </div>
-
-        <div class="project-card">
-            <h3>Service Request Tracker</h3>
-            <p><strong>C# / Windows Forms</strong></p>
-            <p>
-                A lightweight support ticket tool for logging issues, assigning priority, and marking resolutions.
-                Focus: real-world technical support workflow simulation.
-            </p>
-        </div>
-
-        <div class="project-card">
-            <h3>Salon Pricing Calculator</h3>
-            <p><strong>C# / WinForms</strong></p>
-            <p>
-                Tool for selecting a stylist, choosing services, building an itemized list, and calculating totals.
-                Focus: event-driven programming and UI for non-technical staff.
-            </p>
-        </div>
-
-        <p class="github-link">
-            <strong>GitHub:</strong>
-            <a class="accent" href="https://github.com/ifynity345" target="_blank">github.com/ifynity345</a>
-        </p>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education">
-        <h2>Education</h2>
-
-        <div class="edu-block">
-            <p><strong>Diploma: Software Development</strong> — Mohawk College, Hamilton, ON</p>
-            <p><em>09/2023 – 12/2025 (Program Code: 558)</em></p>
-            <ul>
-                <li>Front End Development</li>
-                <li>Programming Fundamentals (Python)</li>
-                <li>Networking Fundamentals</li>
-                <li>Database Management / SQL</li>
-                <li>Software Testing & Quality Assurance</li>
-                <li>Cybersecurity Essentials</li>
-                <li>Technical Documentation</li>
-                <li>Troubleshooting and Problem Solving</li>
-                <li>Systems Analysis and Design</li>
-            </ul>
-        </div>
-
-        <div class="edu-block">
-            <p><strong>IBM Full Stack Software Developer Certificate</strong> — Hamilton, ON</p>
-            <p><em>02/2025 – 12/2025</em></p>
-            <ul>
-                <li>Intro to Software Engineering</li>
-                <li>Intro to Cloud Computing</li>
-                <li>HTML, CSS & JavaScript</li>
-                <li>Developing Front-End Apps with React</li>
-                <li>Python for Data Science, AI & Development</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Resume / Work History Section -->
-    <section id="resume">
-        <h2>Resume / Work Experience</h2>
-
-        <div class="project-card">
-            <h3>Freelance Database Administrator</h3>
-            <p><strong>Self-Employed — Hamilton, ON</strong></p>
-            <p><em>09/2023 – Current</em></p>
-            <ul>
-                <li>Managed and maintained databases for availability, performance, and security.</li>
-                <li>Performed regular backups and restorations for disaster recovery readiness.</li>
-                <li>Provided clear reports and improvement recommendations to clients.</li>
-            </ul>
-        </div>
-
-        <div class="project-card">
-            <h3>Desktop Support Technician</h3>
-            <p><strong>Airtel — Lagos, Nigeria</strong></p>
-            <p><em>10/2021 – 07/2023</em></p>
-            <ul>
-                <li>Diagnosed and resolved hardware, software, and network issues for end users.</li>
-                <li>Ensured systems followed security policy, applied patches, and maintained antivirus.</li>
-                <li>Guided users and trained them on tools and systems.</li>
-            </ul>
-        </div>
-
-        <div class="project-card">
-            <h3>Data Analyst Assistant / Technical Support (Internship)</h3>
-            <p><strong>Effort Trust — Hamilton, Ontario</strong></p>
-            <p><em>06/2025 – 08/2025</em></p>
-            <ul>
-                <li>Uploaded floorplans and maintained website content accurately.</li>
-                <li>Handled structured data and web tasks in a technical capacity.</li>
-                <li>Helped improve internal processes for working with large datasets.</li>
-            </ul>
-        </div>
-
-        <a href="resume.pdf" class="button" target="_blank">Download Full Resume (PDF)</a>
-        <p class="note">
-            P.S. I’m open and ready to learn more.
-        </p>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <p><strong>Name:</strong> Ifeanyi Bethel Aigbogun</p>
-        <p><strong>Location:</strong> Hamilton, Ontario</p>
-        <p><strong>Email:</strong> <a class="accent" href="mailto:aigbogunbethel@gmail.com">aigbogunbethel@gmail.com</a></p>
-        <p><strong>Phone:</strong> (365) 323-5112</p>
-        <p><strong>LinkedIn:</strong>
-            <a class="accent" href="https://linkedin.com/in/ifeanyi-aigbogun-bethel" target="_blank">
-                linkedin.com/in/ifeanyi-aigbogun-bethel
-            </a>
-        </p>
-        <p><strong>GitHub:</strong>
-            <a class="accent" href="https://github.com/ifynity345" target="_blank">github.com/ifynity345</a>
-        </p>
-    </section>
-
-    <footer>
-        <p>© 2025 Ifeanyi Bethel Aigbogun. All rights reserved.</p>
-    </footer>
+            // Clean up after animation finishes
+            bubble.addEventListener('animationend', () => {
+                bubble.remove();
+            });
+        });
+    });
+</script>
 
 </body>
 </html>
