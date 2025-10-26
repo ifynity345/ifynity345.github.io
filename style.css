@@ -1,37 +1,387 @@
-/* Extra helpers for updated layout */
-.subtitle-line {
-    font-size: 0.9rem;
-    color: #ccc;
-    margin-top: -10px;
-    margin-bottom: 20px;
+/********************
+  Base page styling
+*********************/
+:root {
+    --bg-main: #0f1012;
+    --bg-card: #1a1c20;
+    --bg-card-alt: #22252b;
+    --text-main: #e9e9e9;
+    --text-dim: #a8acb5;
+    --accent: #4da8ff;
+    --border-card: #2a2d33;
+    --radius-card: 12px;
+    --radius-small: 6px;
+
+    --font-main: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font-main);
+    margin: 0;
     line-height: 1.5;
 }
 
-.accent {
-    color: #00aaff;
+/********************
+  Banner
+*********************/
+.banner {
+    background-color: #2a2d33;
+    color: var(--text-dim);
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid #3a3f48;
+}
+
+/********************
+  Header / Nav
+*********************/
+.site-header {
+    background-color: #141519;
+    border-bottom: 1px solid #2a2d33;
+}
+
+.header-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1rem 0;
+    justify-content: space-between;
+}
+
+.brand-block .name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.brand-block .role {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin-top: 0.1rem;
+}
+
+.main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.85rem;
+}
+
+.main-nav a {
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+.main-nav a:hover {
+    color: var(--accent);
+}
+
+/********************
+  Layout container
+*********************/
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+/********************
+  Cards / sections
+*********************/
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-card);
+    padding: 1.5rem 1.5rem 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+.hero-card {
+    background: radial-gradient(circle at 10% 10%, rgba(77,168,255,0.08) 0%, rgba(26,28,32,0) 60%), var(--bg-card);
+}
+
+/********************
+  Typography
+*********************/
+.topline {
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 .5rem;
+}
+
+.headline {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+}
+
+.summary-text {
+    font-size: 0.9rem;
+    color: var(--text-main);
+    margin: 0 0 1rem;
+    max-width: 900px;
+}
+
+.contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin-top: 1rem;
+}
+
+.contact-row a {
+    color: var(--accent);
     text-decoration: none;
 }
 
-.accent:hover {
+.contact-row a:hover {
     text-decoration: underline;
 }
 
-.github-link {
-    margin-top: 30px;
-    font-size: 0.95rem;
+.section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 
-.note {
-    color: #aaa;
+/********************
+  Experience section
+*********************/
+.job {
+    background-color: var(--bg-card-alt);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-small);
+    padding: 1rem 1rem .5rem;
+    margin-bottom: 1rem;
+}
+
+.job-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+}
+
+.job-role {
     font-size: 0.9rem;
-    margin-top: 10px;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.job-company {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+}
+
+.job-dates {
+    font-size: 0.8rem;
+    color: var(--text-dim);
     font-style: italic;
 }
 
-.edu-block {
-    background-color: #121212;
-    padding: 15px;
-    border-radius: 8px;
-    border-left: 4px solid #00aaff;
-    margin-bottom: 20px;
+.job-points {
+    margin: 0 0 .75rem 1rem;
+    padding: 0;
+    color: var(--text-main);
+    font-size: 0.85rem;
+}
+
+.job-points li {
+    margin-bottom: .4rem;
+}
+
+/********************
+  Skills grid
+*********************/
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(min(230px,100%),1fr));
+    gap: 1rem;
+}
+
+.skill-col {
+    background-color: var(--bg-card-alt);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-small);
+    padding: 1rem;
+}
+
+.skill-col h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-top: 0;
+    margin-bottom: .5rem;
+}
+
+.skill-col ul {
+    padding-left: 1rem;
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-main);
+}
+
+.skill-col ul li {
+    margin-bottom: .4rem;
+}
+
+/********************
+  Projects grid
+*********************/
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(min(300px,100%),1fr));
+    gap: 1rem;
+}
+
+.proj-card {
+    background-color: var(--bg-card-alt);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-small);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.proj-head {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .5rem;
+}
+
+.proj-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.proj-stack {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    margin-top: .2rem;
+}
+
+.proj-points {
+    padding-left: 1rem;
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--text-main);
+}
+
+.proj-points li {
+    margin-bottom: .4rem;
+}
+
+/* GitHub row under projects */
+.github-row {
+    font-size: 0.8rem;
+    margin-top: 1.5rem;
+    color: var(--text-dim);
+}
+
+.github-row a {
+    color: var(--accent);
+    text-decoration: none;
+}
+.github-row a:hover {
+    text-decoration: underline;
+}
+
+/********************
+  Education
+*********************/
+.edu-entry {
+    background-color: var(--bg-card-alt);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-small);
+    padding: 1rem 1rem .75rem;
+    margin-bottom: 1rem;
+}
+
+.edu-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+}
+
+.edu-program {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.edu-school {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+}
+
+.edu-dates {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    font-style: italic;
+}
+
+.edu-body {
+    font-size: 0.8rem;
+    color: var(--text-main);
+    line-height: 1.4;
+}
+
+/********************
+  Contact
+*********************/
+#contact p {
+    font-size: 0.85rem;
+    color: var(--text-main);
+    margin: 0 0 .5rem;
+}
+
+#contact a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+.btn-resume {
+    display: inline-block;
+    background-color: var(--accent);
+    color: #000;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-decoration: none;
+    border-radius: var(--radius-small);
+    padding: 0.6rem 0.9rem;
+    margin-top: 1rem;
+}
+
+/********************
+  Footer
+*********************/
+.footer {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 0.75rem;
+    padding: 2rem 0 3rem;
 }
