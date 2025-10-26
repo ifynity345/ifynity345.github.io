@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ifeanyi Bethel Aigbogun | Software Developer</title>
 
-    <!-- Link to external CSS file -->
+    <!-- Link to external CSS -->
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -345,33 +345,55 @@
             © 2025 Ifeanyi Bethel Aigbogun
         </footer>
     </main>
+
+    <!-- Interactivity scripts -->
     <script>
-    // Ripple effect for project cards based on mouse position
-    document.querySelectorAll('.proj-card').forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            // Get bounding box of this card so we know mouse position relative inside it
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
+        // PROJECT RIPPLE EFFECT (bubble follows mouse)
+        document.querySelectorAll('.proj-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
 
-            // Create the bubble
-            const bubble = document.createElement('span');
-            bubble.classList.add('ripple-bubble');
+                const bubble = document.createElement('span');
+                bubble.classList.add('ripple-bubble');
+                bubble.style.left = x + 'px';
+                bubble.style.top = y + 'px';
 
-            // Position it at cursor
-            bubble.style.left = x + 'px';
-            bubble.style.top = y + 'px';
+                card.appendChild(bubble);
 
-            // Add to card
-            card.appendChild(bubble);
-
-            // Clean up after animation finishes
-            bubble.addEventListener('animationend', () => {
-                bubble.remove();
+                bubble.addEventListener('animationend', () => {
+                    bubble.remove();
+                });
             });
         });
-    });
-</script>
 
+        // NAV ACTIVE LINK HIGHLIGHT ON SCROLL
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll(".main-nav a");
+
+        function setActiveLink() {
+            let currentId = null;
+
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 120 && rect.bottom >= 120) {
+                    currentId = section.id;
+                }
+            });
+
+            navLinks.forEach(link => {
+                const href = link.getAttribute("href");
+                if (currentId && href === "#" + currentId) {
+                    link.classList.add("active");
+                } else {
+                    link.classList.remove("active");
+                }
+            });
+        }
+
+        document.addEventListener("scroll", setActiveLink);
+        window.addEventListener("load", setActiveLink);
+    </script>
 </body>
 </html>

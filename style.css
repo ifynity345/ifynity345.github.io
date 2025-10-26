@@ -1,5 +1,5 @@
 /********************
-  Theme variables
+  Global + smooth scroll
 *********************/
 :root {
     --bg-main: #0f1012;
@@ -16,14 +16,13 @@
         Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-* {
-    box-sizing: border-box;
-}
-
 html {
     scroll-behavior: smooth;
 }
 
+* {
+    box-sizing: border-box;
+}
 
 body {
     background-color: var(--bg-main);
@@ -88,6 +87,12 @@ body {
 
 .main-nav a:hover {
     color: var(--accent);
+}
+
+/* Active nav item based on scroll position */
+.main-nav a.active {
+    color: var(--accent);
+    font-weight: 600;
 }
 
 /********************
@@ -214,16 +219,16 @@ body {
 /* hover effect */
 .job:hover {
     transform: translateY(-4px);
-    box-shadow: 0 25px 60px rgba(0,0,0,0.6),
-                0 0 20px rgba(77,168,255,0.25);
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.6),
+        0 0 20px rgba(77,168,255,0.25);
     border: 1px solid rgba(77,168,255,0.4);
-    background-color: #2a2d33; /* slightly brighter on hover */
+    background-color: #2a2d33;
 }
 
 .job:hover::after {
     opacity: 1;
 }
-
 
 .job-head {
     display: flex;
@@ -272,17 +277,19 @@ body {
     gap: 1rem;
 }
 
-/********************
-  Rainbow hover animation for skills
-*********************/
-
 .skill-col {
+    background-color: var(--bg-card-alt);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-small);
+    padding: 1rem;
+
+    /* for rainbow effect */
     position: relative;
     overflow: hidden;
     cursor: default;
 }
 
-/* rainbow overlay that slides when hovered */
+/* rainbow sweep layer */
 .skill-col::after {
     content: "";
     position: absolute;
@@ -325,7 +332,6 @@ body {
     }
 }
 
-
 .skill-col h3 {
     font-size: 0.9rem;
     font-weight: 600;
@@ -357,60 +363,27 @@ body {
     gap: 1rem;
 }
 
-/********************
-  Interactive ripple bubble on project hover (mouse-position aware)
-*********************/
-
-/* make sure proj-card is positioned and can show overflow visuals */
 .proj-card {
+    background-color: var(--bg-card-alt);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-small);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    /* for ripple / hover polish */
     position: relative;
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* subtle lift/glow on hover */
 .proj-card:hover {
     transform: translateY(-4px);
     box-shadow:
         0 25px 50px rgba(0,0,0,0.5),
         0 0 20px rgba(77,168,255,0.25);
 }
-
-/* the bubble element we'll inject dynamically */
-.ripple-bubble {
-    position: absolute;
-    width: 220px;
-    height: 220px;
-    pointer-events: none;
-    border-radius: 50%;
-    background: radial-gradient(
-        circle,
-        rgba(77,168,255,0.25) 0%,
-        rgba(77,168,255,0) 70%
-    );
-    mix-blend-mode: screen; /* feels like light under glass */
-    filter: blur(8px);
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.4);
-    animation: ripple-burst 0.9s ease-out forwards;
-}
-
-/* animation for each bubble */
-@keyframes ripple-burst {
-    0% {
-        opacity: 0.6;
-        transform: translate(-50%, -50%) scale(0.4);
-    }
-    70% {
-        opacity: 0.3;
-    }
-    100% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(1.4);
-    }
-}
-
 
 .proj-head {
     display: flex;
@@ -453,6 +426,39 @@ body {
 }
 .github-row a:hover {
     text-decoration: underline;
+}
+
+/* bubble ripple visual (injected as <span> with JS) */
+.ripple-bubble {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    pointer-events: none;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(77,168,255,0.25) 0%,
+        rgba(77,168,255,0) 70%
+    );
+    mix-blend-mode: screen;
+    filter: blur(8px);
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.4);
+    animation: ripple-burst 0.9s ease-out forwards;
+}
+
+@keyframes ripple-burst {
+    0% {
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scale(0.4);
+    }
+    70% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.4);
+    }
 }
 
 /********************
@@ -535,4 +541,3 @@ body {
     font-size: 0.75rem;
     padding: 2rem 0 3rem;
 }
-
